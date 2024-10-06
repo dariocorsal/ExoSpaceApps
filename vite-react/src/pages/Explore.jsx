@@ -34,7 +34,6 @@ const exoplanets = [
     facts: ["The closest exoplanet to Earth", "Potentially habitable zone"],
   },
 ];
-
 const Types = [
   {
     name: "Gas giant",
@@ -57,7 +56,6 @@ const Types = [
       "These are the rocky heroes of space, about the size of Earth or smaller. They might have oceans, air, and who knows—maybe even some space creatures!",
   },
 ];
-
 const generalInfo = [
   {
     title: "What are Exoplanets?",
@@ -75,7 +73,6 @@ const generalInfo = [
       "Studying exoplanets helps scientists understand more about our own solar system and the potential for life on other planets. It opens the door to new discoveries.",
   },
 ];
-
 const mascotFacts = [
   "There are over 5,000 confirmed exoplanets!",
   "The first exoplanet was discovered in 1992.",
@@ -83,7 +80,6 @@ const mascotFacts = [
   "The hottest known exoplanet is KELT-9b, with temperatures over 4,300°C!",
   "The largest known exoplanet is 20 times bigger than Jupiter!",
 ];
-
 export default function ExoplanetExplorer() {
   const navigate = useNavigate();
   const [currentPlanet, setCurrentPlanet] = useState(0);
@@ -133,15 +129,15 @@ export default function ExoplanetExplorer() {
   };
 
   return (
-    <div className=" min-h-screen  text-white ">
-      {/* Top Menu */}
+    <div className="min-h-screen text-white relative">
       <StarryBackground />
 
-      <div className="p-8">
+      <div className="p-8 pb-24">
+        {" "}
+        {/* Added padding at the bottom to account for the fixed menu */}
         <h1 className="text-4xl font-bold mb-6 text-center">
           Explore Exoplanets!
         </h1>
-
         {/* 3D Model Display and Exoplanet Information */}
         <section className="mb-12 relative">
           <div className="rounded-lg p-6 flex flex-col md:flex-row items-center">
@@ -199,7 +195,6 @@ export default function ExoplanetExplorer() {
             </div>
           </div>
         </section>
-
         {/* Container for General Information and Types */}
         <div className=" bg-opacity-80 flex flex-col md:flex-row mb-12 space-x-4">
           {/* General Information */}
@@ -247,8 +242,8 @@ export default function ExoplanetExplorer() {
                 </h3>
                 <button
                   onClick={() => {
-                    setCurrentSection("types"); // Cambia la sección de la mascota
-                    nextType(); // Mueve al siguiente tipo de exoplaneta
+                    setCurrentSection("types");
+                    nextType();
                   }}
                   className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
                 >
@@ -259,10 +254,9 @@ export default function ExoplanetExplorer() {
             </div>
           </section>
         </div>
-
         {/* Mascot */}
         <div
-          className={`fixed bottom-0 right-4 transition-all duration-300 ease-in-out ${
+          className={`fixed bottom-20 right-4 transition-all duration-300 ease-in-out z-50 ${
             showMascotDialog ? "translate-y-0" : "translate-y-[80%]"
           }`}
           onMouseEnter={handleMascotHover}
@@ -282,37 +276,33 @@ export default function ExoplanetExplorer() {
               </button>
               <p className="text-sm">
                 {currentSection === "general" &&
-                  "¡Bienvenido a la exploración de exoplanetas! Aquí aprenderemos información general sobre estos fascinantes mundos."}
+                  "Welcome to exoplanet exploration! Here we will learn general information about these fascinating worlds."}
                 {currentSection === "types" &&
-                  "¡Hola! Estos son los diferentes tipos de exoplanetas. ¿No son fascinantes?"}
+                  "These are the different types of exoplanets. Aren't they fascinating?"}
                 {currentSection === "explore" && mascotFacts[currentMascotFact]}
               </p>
             </div>
           )}
         </div>
-
-        {/* Bottom Menu - Estático al hacer scroll */}
-        <div className="bg-indigo-800 p-4 fixed bottom-0 left-0 right-0 flex justify-between items-center">
-          <button
-            onClick={() => changeSection("explore")}
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
-          >
-            Explore
-          </button>
-          <div className="flex items-center">
-            <img
-              src="./public/amongus.png"
-              alt="Exoplanet Explorer Logo"
-              className="h-8 w-8 mr-2"
-            />
-            <h1 className="text-2xl font-bold">Fun with Exoplanets</h1>
+        {/* Bottom Menu */}
+        <div className="bg-indigo-800 p-4 fixed bottom-0 left-0 right-0 flex justify-center items-center z-40">
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => navigate("/")}
+              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
+            >
+              Back
+            </button>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold">Fun with Exoplanets</h1>
+            </div>
+            <button
+              onClick={() => navigate("/quiz")}
+              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
+            >
+              Next
+            </button>
           </div>
-          <button
-            onClick={() => changeSection("next")}
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
-          >
-            Next
-          </button>
         </div>
       </div>
     </div>

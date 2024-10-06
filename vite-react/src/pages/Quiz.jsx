@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import StarryBackground from "/src/Estrellas";
 import "/src/App.css";
+import { useNavigate } from "react-router-dom";
 
 const questions = [
   {
@@ -88,6 +89,12 @@ export default function QuizComponent() {
     setSelectedAnswer(null);
   };
 
+  const navigate = useNavigate();
+
+  const goToSection = (route) => {
+    navigate(route);
+  };
+
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center p-4 overflow-hidden relative">
       <StarryBackground />
@@ -129,6 +136,13 @@ export default function QuizComponent() {
               className="bg-[#ffa709] hover:bg-[#ff8c00] text-white font-bold py-2 px-4 rounded-full text-lg transition-colors"
             >
               Retry Quiz
+            </button>
+
+            <button
+              onClick={() => navigate("/paint")}
+              className="bg-[#ffa709] hover:bg-[#ff8c00] text-white font-bold py-2 px-4 rounded-full text-lg transition-colors"
+            >
+              Draw your Own!
             </button>
           </motion.div>
         ) : (

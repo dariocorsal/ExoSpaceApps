@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Palette, Eraser, RotateCcw } from "lucide-react";
 import StarryBackground from "/src/Estrellas";
 import "/src/App.css";
+import { useNavigate } from "react-router-dom";
 
 export default function PaintComponent() {
   const canvasRef = useRef(null);
@@ -59,6 +60,12 @@ export default function PaintComponent() {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
+  };
+
+  const navigate = useNavigate();
+
+  const goToSection = (route) => {
+    navigate(route);
   };
 
   return (

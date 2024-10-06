@@ -122,7 +122,7 @@ export default function ExoplanetExplorer() {
   );
 
   const handleMascotHover = () => {
-    if (currentSection === "explore" && !showMascotDialog) {
+    if (!showMascotDialog) {
       setCurrentMascotFact((prev) => (prev + 1) % mascotFacts.length);
       setShowMascotDialog(true);
     }
@@ -259,7 +259,7 @@ export default function ExoplanetExplorer() {
           className={`fixed bottom-20 right-4 transition-all duration-300 ease-in-out z-50 ${
             showMascotDialog ? "translate-y-0" : "translate-y-[80%]"
           }`}
-          onMouseEnter={handleMascotHover}
+          onMouseEnter={handleMascotHover} // Hover sobre la mascota
         >
           <img
             src="/mascot.png"
@@ -274,13 +274,7 @@ export default function ExoplanetExplorer() {
               >
                 <X size={16} />
               </button>
-              <p className="text-sm">
-                {currentSection === "general" &&
-                  "Welcome to exoplanet exploration! Here we will learn general information about these fascinating worlds."}
-                {currentSection === "types" &&
-                  "These are the different types of exoplanets. Aren't they fascinating?"}
-                {currentSection === "explore" && mascotFacts[currentMascotFact]}
-              </p>
+              <p className="text-sm">{mascotFacts[currentMascotFact]}</p>
             </div>
           )}
         </div>

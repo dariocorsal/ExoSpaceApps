@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -22,7 +22,17 @@ a:hover {
   color: #535bf2;
 }
 
+/* Añadir esta clase al archivo CSS */
+.card {
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Eleva el cuadro hacia arriba */
+}
+
 body {
+  font-family: "Poppins", sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
@@ -33,6 +43,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: "Poppins", sans-serif;
 }
 
 button {

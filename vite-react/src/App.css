@@ -1,8 +1,14 @@
 #root {
+  font-family: "Montserrat", sans-serif;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -16,6 +22,19 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.flex {
+  display: flex;
+  transition: transform 0.5s ease; /* Suaviza la transición */
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 @keyframes logo-spin {
@@ -39,4 +58,35 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.header {
+  font-family: "Poppins", cursive; /* Asegúrate de que este nombre coincida */
+  font-size: 4rem; /* Tamaño del texto */
+  color: #ffffff; /* Color del texto blanco */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6); /* Resplandor blanco */
+  text-align: center; /* Centrar el texto */
+  margin: 30px 0; /* Espaciado */
+  transition: transform 0.3s ease; /* Transición para cambios de tamaño */
+}
+
+.header:hover {
+  transform: scale(1.1); /* Aumentar tamaño al pasar el mouse */
+}
+
+/* Animación de entrada */
+@keyframes entry {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-entry {
+  animation: entry 0.5s ease forwards;
 }

@@ -7,25 +7,25 @@ const sections = [
     title: "Explore",
     description: "Learn more about exoplanets!",
     image: "/public/E1.jpg",
-    route: "/exploration", // Ruta para redirigir a la página de exploración
+    route: "/exploration",
   },
   {
     title: "Quiz",
     description: "Test your knowledge on exoplanets!",
     image: "/public/E2.jpg",
-    route: "/quiz", // Ruta para el quiz
+    route: "/quiz",
   },
   {
     title: "Draw",
     description: "Create your own artwork inspired by exoplanets!",
     image: "/public/E3.jpg",
-    route: "/paint", // Ruta para la página de dibujo
+    route: "/paint",
   },
   {
-    title: "TEST",
-    description: "TEST",
+    title: "3D Exoplanets",
+    description: "Explore and interact with exoplanets in stunning 3D!",
     image: "/public/E3.jpg",
-    route: "/test", // Ruta de prueba
+    route: "/exoplanets",
   },
 ];
 

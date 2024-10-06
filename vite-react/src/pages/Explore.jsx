@@ -4,6 +4,7 @@ import { Sphere, OrbitControls } from "@react-three/drei";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as THREE from "three";
 import { useNavigate } from "react-router-dom";
+import StarryBackground from "/src/Estrellas";
 
 // Import textures
 import exoplanet1Texture from "../assets/exoplanet1.jpg";
@@ -132,101 +133,18 @@ export default function ExoplanetExplorer() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-indigo-900 text-white">
+    <div className=" min-h-screen  text-white ">
       {/* Top Menu */}
-      <div className="bg-indigo-800 p-4 flex justify-between items-center">
-        <button
-          onClick={() => navigate("/explore")}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
-        >
-          <ChevronLeft size={24} className="mr-2" />
-          Back
-        </button>
-        <div className="flex items-center">
-          <img
-            src="./public/amongus.png"
-            alt="Exoplanet Explorer Logo"
-            className="h-8 w-8 mr-2"
-          />
-          <h1 className="text-2xl font-bold">Fun with Exoplanets</h1>
-        </div>
-        <button
-          onClick={() => navigate("/exploration")}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center"
-        >
-          Next
-          <ChevronRight size={24} className="ml-2" />
-        </button>
-      </div>
+      <StarryBackground />
 
       <div className="p-8">
         <h1 className="text-4xl font-bold mb-6 text-center">
           Explore Exoplanets!
         </h1>
 
-        {/* Container for General Information and Types */}
-        <div className="flex flex-col md:flex-row mb-12 space-x-4">
-          {/* General Information */}
-          <section className="flex-1 mb-4 md:mb-0">
-            <div className="bg-indigo-800 rounded-lg p-6">
-              <div className="flex justify-between items-center mb-4">
-                <button
-                  onClick={prevInfo}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <h2 className="text-2xl font-semibold">
-                  {generalInfo[currentInfoIndex].title}
-                </h2>
-                <button
-                  onClick={nextInfo}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </div>
-              <p className="mb-4">{generalInfo[currentInfoIndex].content}</p>
-            </div>
-          </section>
-
-          {/* Types of Exoplanets */}
-          <section className="flex-1 mb-4 md:mb-0">
-            <div className="bg-indigo-800 rounded-lg p-6">
-              <div className="mb-4 text-center">
-                <h2 className="text-2xl font-semibold">Types of Exoplanets:</h2>
-              </div>
-              <div className="flex justify-center items-center mb-4 space-x-4">
-                <button
-                  onClick={() => {
-                    setCurrentSection("types"); // Cambia la sección de la mascota
-                    prevType(); // Mueve al tipo anterior de exoplaneta
-                  }}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <h3 className="text-2xl font-semibold">
-                  {Types[currentTypeIndex].name}
-                </h3>
-                <button
-                  onClick={() => {
-                    setCurrentSection("types"); // Cambia la sección de la mascota
-                    nextType(); // Mueve al siguiente tipo de exoplaneta
-                  }}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </div>
-              <p>{Types[currentTypeIndex].description}</p>
-            </div>
-          </section>
-        </div>
-
         {/* 3D Model Display and Exoplanet Information */}
         <section className="mb-12 relative">
-          <div className="bg-indigo-800 rounded-lg p-6 flex flex-col md:flex-row items-center">
+          <div className="rounded-lg p-6 flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 max-w-md mb-6 md:mb-0">
               <Canvas style={{ height: "400px", width: "100%" }}>
                 <OrbitControls
@@ -248,7 +166,7 @@ export default function ExoplanetExplorer() {
                     setCurrentSection("explore"); // Cambia la sección de la mascota
                     prevPlanet(); // Mueve al siguiente tipo de exoplaneta
                   }}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                  className="bg-white-200 hover:bg-grey-600 p-2 rounded-full"
                 >
                   <ChevronLeft size={24} />
                 </button>
@@ -257,7 +175,7 @@ export default function ExoplanetExplorer() {
                     setCurrentSection("explore"); // Cambia la sección de la mascota
                     nextPlanet(); // Mueve al siguiente tipo de exoplaneta
                   }}
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                  className="bg-white-200 hover:bg-grey-600 p-2 rounded-full"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -281,6 +199,66 @@ export default function ExoplanetExplorer() {
             </div>
           </div>
         </section>
+
+        {/* Container for General Information and Types */}
+        <div className=" bg-opacity-80 flex flex-col md:flex-row mb-12 space-x-4">
+          {/* General Information */}
+          <section className="flex-1 mb-4 md:mb-0">
+            <div className=" bg-opacity-80 bg-indigo-800 rounded-lg p-6">
+              <div className="flex justify-between items-center mb-4">
+                <button
+                  onClick={prevInfo}
+                  className="bg-opacity-80 bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <h2 className="text-2xl font-semibold">
+                  {generalInfo[currentInfoIndex].title}
+                </h2>
+                <button
+                  onClick={nextInfo}
+                  className="bg-opacity-80 bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+              <p className="mb-4">{generalInfo[currentInfoIndex].content}</p>
+            </div>
+          </section>
+
+          {/* Types of Exoplanets */}
+          <section className="flex-1 mb-4 md:mb-0">
+            <div className="bg-opacity-80 bg-indigo-800 rounded-lg p-6">
+              <div className="mb-4 text-center">
+                <h2 className="text-2xl font-semibold">Types of Exoplanets:</h2>
+              </div>
+              <div className="flex justify-center items-center mb-4 space-x-4">
+                <button
+                  onClick={() => {
+                    setCurrentSection("types"); // Cambia la sección de la mascota
+                    prevType(); // Mueve al tipo anterior de exoplaneta
+                  }}
+                  className=" bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <h3 className="text-2xl font-semibold">
+                  {Types[currentTypeIndex].name}
+                </h3>
+                <button
+                  onClick={() => {
+                    setCurrentSection("types"); // Cambia la sección de la mascota
+                    nextType(); // Mueve al siguiente tipo de exoplaneta
+                  }}
+                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+              <p>{Types[currentTypeIndex].description}</p>
+            </div>
+          </section>
+        </div>
 
         {/* Mascot */}
         <div

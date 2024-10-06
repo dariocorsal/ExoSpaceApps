@@ -174,6 +174,14 @@ export default function QuizComponent() {
             </motion.button>
           </>
         )}
+        <motion.img
+          src="./public/estrellas/Untitled_Artwork 4.PNG"
+          alt="Mascot"
+          className="absolute bottom-0 right-0 w-50 h-40 object-contain"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        />
       </motion.div>
     </div>
   );

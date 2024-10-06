@@ -168,8 +168,8 @@ export default function ExoplanetExplorer() {
                 </button>
                 <button
                   onClick={() => {
-                    setCurrentSection("explore"); // Cambia la sección de la mascota
-                    nextPlanet(); // Mueve al siguiente tipo de exoplaneta
+                    setCurrentSection("explore");
+                    nextPlanet();
                   }}
                   className="bg-white-200 hover:bg-grey-600 p-2 rounded-full"
                 >

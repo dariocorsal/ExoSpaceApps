@@ -76,7 +76,7 @@ export default function PaintComponent() {
         </motion.div>
       </div>
       <motion.div
-        className="bg-white bg-opacity-80 rounded-3xl p-8 max-w-4xl w-full"
+        className="bg-white bg-opacity-80 rounded-3xl p-8 max-w-4xl w-full relative"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -126,15 +126,25 @@ export default function PaintComponent() {
             className="w-32"
           />
         </div>
-        <canvas
-          ref={canvasRef}
-          width={800}
-          height={600}
-          onMouseDown={startDrawing}
-          onMouseMove={draw}
-          onMouseUp={stopDrawing}
-          onMouseOut={stopDrawing}
-          className="w-full h-[60vh] bg-black bg-opacity-50 rounded-2xl cursor-crosshair"
+        <div className="relative">
+          <canvas
+            ref={canvasRef}
+            width={800}
+            height={600}
+            onMouseDown={startDrawing}
+            onMouseMove={draw}
+            onMouseUp={stopDrawing}
+            onMouseOut={stopDrawing}
+            className="w-full h-[60vh] bg-black bg-opacity-50 rounded-2xl cursor-crosshair"
+          />
+        </div>
+        <motion.img
+          src="./public/estrellas/Untitled_Artwork 8.PNG"
+          alt="Mascot"
+          className="absolute bottom-0 right-0 w-40 h-40 object-contain"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         />
       </motion.div>
     </div>

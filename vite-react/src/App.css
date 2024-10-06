@@ -61,14 +61,35 @@
 }
 
 .header {
-  font-family: "Poppins", cursive; /* Asegúrate de que este nombre coincida */
-  font-size: 4rem; /* Tamaño del texto */
-  color: #ffffff; /* Color del texto blanco */
+  font-family: "Poppins", cursive;
+  font-size: 4rem;
+  color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 255, 255, 0.6); /* Resplandor blanco */
-  text-align: center; /* Centrar el texto */
-  margin: 30px 0; /* Espaciado */
-  transition: transform 0.3s ease; /* Transición para cambios de tamaño */
+    0 0 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 30px 0;
+  transition: transform 0.3s ease;
+}
+
+.Quiz {
+  font-family: "Poppins", cursive;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 30px 0;
+  transition: transform 0.3s ease;
+}
+.Paint {
+  font-family: "Poppins", cursive;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 30px 0;
+  transition: transform 0.3s ease;
 }
 
 .header:hover {
